@@ -1,0 +1,38 @@
+syntax = "proto3";
+package htf.schemas.v1.pbs.data;
+option csharp_namespace = "Htf.Schemas.V1.Pbs.Data";
+
+import "google/protobuf/timestamp.proto";
+import "Data/Market/money.proto";
+
+message Tick{
+    string exchange =1;
+    string symbol =2;
+    google.type.Money price =3;
+    google.type.Money volume =4;
+    google.protobuf.Timestamp timestamp =5;
+}
+
+message TickPacket{
+    string exchange =1;
+    string symbol =2;
+    int32 close_interval_sec=11;
+    repeated int64 price_units = 5 [packed=true];
+    repeated int32 price_Nanos = 6 [packed=true];
+    repeated int64 volume_units = 7 [packed=true];
+    repeated int32 volume_nanos = 8 [packed=true];
+    repeated int64 timestamps = 9 [packed=true];
+    int32 ticks_count = 10;
+}
+
+message OHLC{
+    google.type.Money open = 1;
+    google.type.Money high = 2;
+    google.type.Money low = 3;
+    google.type.Money close = 4;
+    google.type.Money volume = 5;
+    google.protobuf.Timestamp timestamp = 6;
+    string exchange =7;
+    string symbol =8;
+    TickPacket tick_packet=9;
+}
