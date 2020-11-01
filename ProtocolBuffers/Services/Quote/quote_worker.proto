@@ -4,7 +4,6 @@ option csharp_namespace = "Htf.Schemas.V1.Service.Grpc";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
-import "Data/MarketData/quote.proto";
 
 message QuoteSubscribe{
     string exchange=1;
