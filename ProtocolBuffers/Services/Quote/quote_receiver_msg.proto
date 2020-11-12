@@ -1,0 +1,19 @@
+syntax = "proto3";
+package htf.schemas.v1.service.quote;
+option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+message QuoteSubscribe{
+    string exchange=1;
+    string symbol=2;
+    bool enable_ticks=3;
+    int32 ohlc_interval_sec=4;
+}
+
+message QuoteSubscription{
+    repeated  QuoteSubscribe subscribe=1;
+    int32 count=2;
+    google.protobuf.Timestamp timestamp =3;
+}
