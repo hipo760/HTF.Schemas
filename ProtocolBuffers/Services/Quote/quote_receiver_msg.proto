@@ -2,7 +2,6 @@ syntax = "proto3";
 package htf.schemas.v1.service.quote;
 option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
 
-import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
 message QuoteSubscribe{
