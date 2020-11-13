@@ -3,26 +3,9 @@ package htf.schemas.v1.service.quote;
 option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
 
 import "google/protobuf/empty.proto";
-// import "google/protobuf/timestamp.proto";
-
 import "Htf.Schemas/ProtocolBuffers/Services/Quote/quote_receiver_msg.proto";
 
-// message QuoteSubscribe{
-//     string exchange=1;
-//     string symbol=2;
-//     bool enable_ticks=3;
-//     int32 ohlc_interval_sec=4;
-// }
-
-// message QuoteSubscription{
-//     repeated  QuoteSubscribe subscribe=1;
-//     int32 count=2;
-//     google.protobuf.Timestamp timestamp =3;
-// }
-
 service QuoteReceiver{
-    rpc AddSymbols(QuoteSubscription) returns(QuoteSubscription);
-    rpc GetSymbols(google.protobuf.Empty) returns(QuoteSubscription);
-    rpc RemoveSymbols(QuoteSubscription) returns(QuoteSubscription);
-    rpc RemoveAllSymbols(google.protobuf.Empty) returns(QuoteSubscription);
+    rpc UpdateSymbol(QuoteSubscription) returns(QuoteSubscriptions);
+    rpc GetSymbols(google.protobuf.Empty) returns(QuoteSubscriptions);
 }

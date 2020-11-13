@@ -4,15 +4,18 @@ option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
 
 import "google/protobuf/timestamp.proto";
 
-message QuoteSubscribe{
-    string exchange=1;
-    string symbol=2;
-    bool enable_ticks=3;
+message QuoteSubscription{
+    enum Operation{
+        SUBSCRIBE,
+        UNSUBSCRIBE
+    }
+    Operation operation=1;
+    string exchange=2;
+    string symbol=3;
     int32 ohlc_interval_sec=4;
+    google.protobuf.Timestamp start_time =5;
 }
 
-message QuoteSubscription{
-    repeated  QuoteSubscribe subscribe=1;
-    int32 count=2;
-    google.protobuf.Timestamp timestamp =3;
+message QuoteSubscriptions{
+    repeated QuoteSubscription symbols=1;
 }
