@@ -6,8 +6,8 @@ import "google/protobuf/timestamp.proto";
 
 message QuoteSubscription{
     enum Operation{
-        SUBSCRIBE,
-        UNSUBSCRIBE
+        SUBSCRIBE=0,
+        UNSUBSCRIBE=1
     }
     Operation operation=1;
     string exchange=2;
