@@ -6,6 +6,6 @@ import "google/protobuf/empty.proto";
 import "Htf.Schemas/ProtocolBuffers/Services/Quote/quote_receiver_msg.proto";
 
 service QuoteReceiver{
-    rpc UpdateSymbol(QuoteSubscription) returns(QuoteSubscriptions);
-    rpc GetSymbols(google.protobuf.Empty) returns(QuoteSubscriptions);
+    rpc UpdateSubscription(QuoteSubscription) returns(QuoteSubscription);
+    rpc GetSubscription(google.protobuf.Empty) returns(QuoteSubscriptions);
 }

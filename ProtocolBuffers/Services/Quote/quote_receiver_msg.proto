@@ -6,16 +6,22 @@ import "google/protobuf/timestamp.proto";
 
 message QuoteSubscription{
     enum Operation{
-        SUBSCRIBE=0;
-        UNSUBSCRIBE=1;
+        UNSUBSCRIBE=0;
+        SUBSCRIBE=1;
     }
     Operation operation=1;
     string exchange=2;
     string symbol=3;
     int32 ohlc_interval_sec=4;
-    google.protobuf.Timestamp start_time =5;
+}
+
+message QuoteStatus{
+    QuoteSubscription quote_subscription=1;
+    google.protobuf.Timestamp start_time=2;
+    google.protobuf.Timestamp update_time=3;
+    int32 quote_count=4;
 }
 
 message QuoteSubscriptions{
-    repeated QuoteSubscription symbols=1;
+    repeated QuoteStatus quote_status=1;
 }

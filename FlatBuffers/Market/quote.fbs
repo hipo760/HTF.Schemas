@@ -38,6 +38,7 @@ table Ohlc{
     high:Money;
     low:Money;
     close:Money;
+    volume:Money;
     count:int;
     ticks:[TickCore];
 }
