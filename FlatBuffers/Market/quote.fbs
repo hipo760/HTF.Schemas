@@ -1,7 +1,7 @@
 namespace Htf.Schemas.V1.Fbs.Market;
 
 enum Side:byte { 
-    Buy = 0, 
+    Buy=0, 
     Sell=1 
 }
 
@@ -22,4 +22,22 @@ table Tick{
     price:Money;
     volume:Money;
     side:Side;
+}
+
+table TickCore{
+    timestamp:Timestamp;
+    price:Money;
+    volume:Money;
+    side:Side;
+}
+
+table Ohlc{
+    exchange:string;
+    symbol:string;
+    open:Money;
+    high:Money;
+    low:Money;
+    close:Money;
+    count:int;
+    ticks:[TickCore];
 }
