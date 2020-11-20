@@ -25,7 +25,7 @@ message TickPacket{
     int32 ticks_count = 10;
 }
 
-message OHLC{
+message Ohlc{
     google.type.Money open = 1;
     google.type.Money high = 2;
     google.type.Money low = 3;

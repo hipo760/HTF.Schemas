@@ -1,0 +1,17 @@
+syntax = "proto3";
+package htf.schemas.v1.service.quote;
+option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
+
+message QuoteInfo{
+    string exchange=1;
+    string symbol=2;
+    string maintain_margin_percent=3;
+    string required_margin_percent=4;
+    string base_asset=5;
+    string quote_asset=6;
+    string margin_asset=7;
+    int32 price_precision=8;
+    int32 quantity_precision=9;
+    int32 base_asset_precision=10;
+    int32 quote_precision=11;
+}
