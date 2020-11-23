@@ -1,3 +1,4 @@
 output/
 script/
-node_modules
+node_modules/
+.vscode/

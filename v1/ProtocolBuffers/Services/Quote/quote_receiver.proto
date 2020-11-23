@@ -1,0 +1,13 @@
+syntax = "proto3";
+package htf.schemas.v1.grpc.service.quote;
+option csharp_namespace = "Htf.Schemas.V1.grpc.Service.Quote";
+
+import "google/protobuf/empty.proto";
+import "Htf.Schemas/v1/ProtocolBuffers/Services/Quote/quote_receiver_msg.proto";
+
+service QuoteReceiver{
+    rpc SubscribeAction(QuoteSubscribeRequest) returns(QuoteSubscription);
+    rpc GetSubscription(google.protobuf.Empty) returns(QuoteSubscriptions);
+    rpc ExchangeConnectAction(ExchangeConnectionRequest)returns(ExchangeConnection);
+    rpc GetExchangeConnections(google.protobuf.Empty)returns(ExchangeConnections);
+}

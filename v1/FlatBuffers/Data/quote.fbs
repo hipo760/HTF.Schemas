@@ -1,0 +1,23 @@
+namespace Htf.Schemas.V1.Fbs.Data;
+
+table Tick{
+    exchange:string;
+    symbol:string;
+    price:float;
+    volume:float;
+    timestamp:long;
+}
+
+table Ohlc{
+    exchange:string;
+    symbol:string;
+    open:float;
+    high:float;
+    low:float;
+    close:float;
+    volume:float;
+    ticks_price:[float];
+    ticks_volume:[float];
+    ticks_ms:[int];
+    ticks_count:int;
+}

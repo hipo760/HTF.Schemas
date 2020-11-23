@@ -1,6 +1,6 @@
 syntax = "proto3";
-package htf.schemas.v1.service.quote;
-option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
+package htf.schemas.v1.pbs.data;
+option csharp_namespace = "Htf.Schemas.V1.Pbs.Data";
 
 message QuoteInfo{
     string exchange=1;

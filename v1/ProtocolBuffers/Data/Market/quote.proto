@@ -1,0 +1,27 @@
+syntax = "proto3";
+package htf.schemas.v1.pbs.data;
+option csharp_namespace = "Htf.Schemas.V1.Pbs.Data";
+
+message Tick{
+    string exchange =1;
+    string symbol =2;
+    float price =3;
+    float volume =4;
+    int64 timestamp =5;
+}
+
+message Ohlc{
+    string exchange =1;
+    string symbol =2;
+    int32 close_interval_sec=3;
+    float open = 4;
+    float high = 5;
+    float low = 6;
+    float close = 7;
+    float volume = 8;
+    int64 timestamp = 9;
+    repeated float ticks_price = 10 [packed=true];
+    repeated float ticks_volume = 11 [packed=true];
+    repeated int32 ticks_ms = 12 [packed=true];
+    int32 ticks_count = 13;
+}

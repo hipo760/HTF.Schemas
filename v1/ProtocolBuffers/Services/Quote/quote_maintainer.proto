@@ -1,0 +1,12 @@
+syntax = "proto3";
+package htf.schemas.v1.service.quote;
+option csharp_namespace = "Htf.Schemas.V1.Service.Quote";
+
+import "google/protobuf/empty.proto";
+import "Htf.Schemas/v1/ProtocolBuffers/Services/Quote/quote_maintainer_msg.proto";
+
+service QuoteMaintainer{
+    rpc GetQuoteDataProperties(google.protobuf.Empty) returns(QuoteDataProperties);
+    rpc RestoreExchangeQuote(QuoteRestoreRequest)returns(RestoreQuoteTask);
+    rpc RestoreExchangeQuoteProgress(RestoreQuoteTask)returns(RestoreQuoteTask);
+}

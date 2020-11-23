@@ -1,0 +1,65 @@
+syntax = "proto3";
+package htf.schemas.v1.grpc.service.quote;
+option csharp_namespace = "Htf.Schemas.V1.Grpc.Service.Quote";
+
+import "Htf.Schemas/v1/ProtocolBuffers/Data/Market/quote_info.proto";
+
+enum ExchangeConnectionState{
+    CLOSED=0;
+    CONNECTING=1;
+    CONNECTED=2;
+    DISCONNECTING=3;
+    RECONNECTING=4;
+}
+enum ExhangeConnectCommand{
+    CONNECT=0;
+    DISCONNECT=1;
+    RECONNECT=2;
+}
+
+enum QuoteSubscribeState{
+    UNSUBSCRIBED=0;
+    SUBSCRIBED=1;
+}
+
+enum QuoteSubscribeCommand{
+    UNSUBSCRIBE=0;
+    SUBSCRIBE=1;
+}
+
+message QuoteSubscribeRequest{
+    QuoteSubscribeCommand command=1;
+    string exchange=2;
+    string symbol=3;
+    int32 ohlc_interval_sec=4;
+}
+
+message QuoteSubscription{
+    QuoteInfo quote_info=1;
+    int32 ohlc_interval_sec=2;
+    int64 start_time=3;
+    int64 update_time=4;
+    int32 quote_count=5;
+    QuoteSubscribeState subscribe_state=6;
+}
+
+message QuoteSubscriptions{
+    repeated QuoteSubscription subscriptions=1;
+}
+
+message ExchangeConnectionRequest{
+    string Exchange =1;
+    ExhangeConnectCommand command =2;
+}
+
+message ExchangeConnection{
+    string Exchange=1;
+    ExchangeConnectionState state =2;
+    int64 state_update_time=3;
+    string ohlc_ws_host=4;
+    string tick_tcp_host=5;
+}
+
+message ExchangeConnections{
+    repeated ExchangeConnection Status =1;
+}
