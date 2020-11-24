@@ -11,6 +11,7 @@ table Tick{
 table Ohlc{
     exchange:string;
     symbol:string;
+    close_interval_sec:int;
     open:float;
     high:float;
     low:float;
