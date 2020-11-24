@@ -5,7 +5,7 @@ option csharp_namespace = "Htf.Schemas.V1.Grpc.Service.Quote";
 import "Data/Market/quote_info.proto";
 
 message QuoteDataPropertie{
-    Htf.Schemas.V1.Pbs.Data.QuoteInfo quote_info=1;
+    htf.schemas.v1.pbs.data.QuoteInfo quote_info=1;
     int64 start_time =2;
     int64 end_time =3;
     int64 count=4;
