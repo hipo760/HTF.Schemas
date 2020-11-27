@@ -30,7 +30,7 @@ enum ExhangeConnectCommand{
 enum QuoteSubscribeState{
     UNSUBSCRIBED=0;
     SUBSCRIBED=1;
-    TIMEOUT=2;
+    TICK_TIMEOUT=2;
 }
 
 enum QuoteSubscribeCommand{
