@@ -29,7 +29,9 @@ enum ExhangeConnectCommand{
 
 enum QuoteSubscribeState{
     UNSUBSCRIBED=0;
-    SUBSCRIBED=1;
+    SUBSCRIBING=1;
+    SUBSCRIBED=2;
+    UNSUBSCRIBING=3;
 }
 
 enum QuoteSubscribeCommand{

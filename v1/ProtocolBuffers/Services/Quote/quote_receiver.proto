@@ -6,7 +6,7 @@ import "google/protobuf/empty.proto";
 import "quote_receiver_msg.proto";
 
 service QuoteReceiver{
-    rpc SubscribeAction(QuoteSubscribeRequest) returns(QuoteSubscription);
+    rpc SubscribeAction(QuoteSubscribeRequest) returns(QuoteSubscriptions);
     rpc GetSubscription(google.protobuf.Empty) returns(QuoteSubscriptions);
     rpc ExchangeConnectAction(ExchangeConnectionRequest)returns(ExchangeConnection);
     rpc GetExchangeConnections(google.protobuf.Empty)returns(ExchangeConnections);
