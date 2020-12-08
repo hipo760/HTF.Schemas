@@ -2,7 +2,7 @@ syntax = "proto3";
 package htf.schemas.v1.grpc.service.quote;
 option csharp_namespace = "Htf.Schemas.V1.Grpc.Service.Quote";
 
-import "Data/Market/quote_info.proto";
+// import "Data/Market/quote_info.proto";
 
 enum ExchangeConnectionState{
     NONE=0;
@@ -47,12 +47,14 @@ message QuoteSubscribeRequest{
 }
 
 message QuoteSubscription{
-    htf.schemas.v1.pbs.data.QuoteInfo quote_info=1;
-    int32 ohlc_interval_sec=2;
-    int64 start_time=3;
-    int64 update_time=4;
-    int32 quote_count=5;
-    QuoteSubscribeState subscribe_state=6;
+    //htf.schemas.v1.pbs.data.QuoteInfo quote_info=1;
+    string exchange=1;
+    string symbol=2;
+    int32 ohlc_interval_sec=3;
+    int64 start_time=4;
+    int64 update_time=5;
+    int32 quote_count=6;
+    QuoteSubscribeState subscribe_state=7;
 }
 
 message QuoteSubscriptions{
