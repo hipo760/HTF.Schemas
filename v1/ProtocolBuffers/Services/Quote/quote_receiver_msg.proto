@@ -57,10 +57,6 @@ message QuoteSubscription{
     QuoteSubscribeState subscribe_state=7;
 }
 
-message QuoteSubscriptions{
-    repeated QuoteSubscription subscriptions=1;
-}
-
 message ExchangeConnectionRequest{
     string Exchange =1;
     ExhangeConnectCommand command =2;
@@ -72,8 +68,4 @@ message ExchangeConnection{
     int64 state_update_time=3;
     string ohlc_ws_host=4;
     string tick_tcp_host=5;
-}
-
-message ExchangeConnections{
-    repeated ExchangeConnection Status =1;
 }
